@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # ↓↓↓↓ ここから追記 ↓↓↓↓
+  namespace :api do
+    resources :sensor_readings, only: [:create]
+  end
 end

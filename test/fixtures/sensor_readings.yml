@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temperature: 1.5
+  humidity: 1.5
+  pressure: 1.5
+  water_temperature: 1.5
+  flow_rate: 1.5
+  tds: 1.5
+  light_intensity: 1
+
+two:
+  temperature: 1.5
+  humidity: 1.5
+  pressure: 1.5
+  water_temperature: 1.5
+  flow_rate: 1.5
+  tds: 1.5
+  light_intensity: 1
