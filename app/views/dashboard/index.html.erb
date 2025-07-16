@@ -1,0 +1,47 @@
+<h1>センサーデータグラフ</h1>
+
+<div style="width: 80%; margin: auto;">
+  <canvas id="sensorChart"></canvas>
+</div>
+
+<script>
+  // Railsから渡されたデータをJavaScriptの変数に変換
+  const sensorReadings = <%= @sensor_readings.to_json.html_safe %>;
+
+  // グラフ用にデータを整形
+  const labels = sensorReadings.map(reading => {
+    return new Date(reading.created_at).toLocaleString('ja-JP');
+  });
+  const temperatureData = sensorReadings.map(reading => reading.temperature);
+  const humidityData = sensorReadings.map(reading => reading.humidity);
+
+  // グラフの描画
+  const ctx = document.getElementById('sensorChart');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: '温度 (°C)',
+          data: temperatureData,
+          borderColor: 'rgb(255, 99, 132)',
+          tension: 0.1
+        },
+        {
+          label: '湿度 (%)',
+          data: humidityData,
+          borderColor: 'rgb(54, 162, 235)',
+          tension: 0.1
+        }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
