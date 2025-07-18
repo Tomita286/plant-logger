@@ -1,0 +1,17 @@
+<h1>新しい生育記録</h1>
+
+<%= form_with(model: PlantLog.new, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :image, "写真" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment, "コメント" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "記録する" %>
+  </div>
+<% end %>

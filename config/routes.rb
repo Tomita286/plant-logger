@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+  get "plant_logs/new"
+  get "plant_logs/create"
+  get "plant_logs/index"
   get "dashboard/index"
+    # ↓↓↓↓ この一行を追加します ↓↓↓↓
+  resources :plant_logs, only: [:index, :new, :create]
+  # ↑↑↑↑ この一行を追加します ↑↑↑↑
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
