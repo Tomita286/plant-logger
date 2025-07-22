@@ -23,7 +23,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
 
+  
   <body>
+  <header style="background-color: #f0f0f0; padding: 10px; margin-bottom: 20px;">
+    <nav>
+      <%= link_to "生育記録", plant_logs_path, style: "margin-right: 15px;" %>
+      <%= link_to "グラフ", dashboard_index_path, style: "margin-right: 15px;" %>
+      <%= link_to "新しい記録を投稿", new_plant_log_path %>
+    </nav>
+  </header>
+
+  <main class="container">
     <%= yield %>
-  </body>
+  </main>
+  <body>
+  
 </html>
+
