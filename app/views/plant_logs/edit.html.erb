@@ -1,0 +1,19 @@
+<h1>生育記録の編集</h1>
+
+<%= form_with(model: @plant_log, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :image, "写真" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment, "コメント" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "更新する" %>
+  </div>
+<% end %>
+
+<%= link_to "一覧に戻る", plant_logs_path %>

@@ -17,8 +17,21 @@
     
     <p>
       <strong>コメント:</strong><br>
+      
       <%= plant_log.comment %>
     </p>
+
+    <% if plant_log.green_pixel_count.present? %>
+      <p>
+        <strong>葉の面積(ピクセル数):</strong>
+        <%= plant_log.green_pixel_count %>
+      </p>
+    <% end %>
+  
+
+      <%= link_to "編集", edit_plant_log_path(plant_log) %>
+      <%= link_to "削除", plant_log_path(plant_log), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
+ 
   </div>
   <hr>
 <% end %>

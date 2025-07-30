@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_17_085537) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_30_065801) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,6 +43,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_17_085537) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "green_pixel_count"
   end
 
   create_table "sensor_readings", force: :cascade do |t|
